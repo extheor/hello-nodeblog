@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width')
+        title= title
+        block css
+            link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+            link(rel="stylesheet",type="text/css",href="assets/waifu.min.css?v=1.4.2")
+    body
+        block main
+
+        block js
+            script(src='/components/jquery/dist/jquery.js')
+            script(src='/components/bootstrap/dist/js/bootstrap.js')
+            //- waifu-tips.js 依赖 JQuery 库
+            script(src='assets/jquery.min.js?v=3.3.1')
+            //- 实现拖动效果，需引入 JQuery UI
+            script(src="assets/jquery-ui.min.js?v=1.12.1")
+            script(src="assets/waifu-tips.min.js?v=1.4.2")
+            script(src="assets/live2d.min.js?v=1.0.5")
+            script(src="js/live2d.js")
+        if ENV_DEVELOPMENT
+            script(src='http://localhost:35729/livereload.js')
+
+        block scripts
